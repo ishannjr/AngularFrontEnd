@@ -26,7 +26,8 @@
             ],
             "styles": [
               "src/styles.css",
-               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "node_modules/devextreme/dist/css/dx.light.css"
             ],
             "scripts": []
           },
@@ -61,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AngularFrontEnd:build:production"
+              "buildTarget": "AngularFrontEnd:build:production"
             },
             "development": {
-              "browserTarget": "AngularFrontEnd:build:development"
+              "buildTarget": "AngularFrontEnd:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AngularFrontEnd:build"
+            "buildTarget": "AngularFrontEnd:build"
           }
         },
         "test": {

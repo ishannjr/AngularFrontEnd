@@ -1,1 +1,26 @@
-<p>homepage works!</p>
+<div class="container mt-4">
+  
+        <h2 class="text-center mb-4">Patient Records</h2>
+        <dx-data-grid
+          [dataSource]="patients"
+          [showBorders]="true"
+          [columnAutoWidth]="true"
+          [rowAlternationEnabled]="true"
+          [editing]="{
+            mode: 'row',
+            allowUpdating: true,
+            allowDeleting: true,
+            allowAdding: false
+          }"
+          (onRowUpdated)="onRowUpdated($event)"
+          (onRowRemoved)="onRowRemoved($event)">
+          <dxo-paging [pageSize]="20"></dxo-paging>
+          <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5, 10, 20]" [showInfo]="true"></dxo-pager>
+          <dxi-column dataField="id" caption="Patient ID" [width]="100" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="name" caption="Name"></dxi-column>
+          <dxi-column dataField="age" caption="Age" [width]="80"></dxi-column>
+          <dxi-column dataField="gender" caption="Gender" [width]="100"></dxi-column>
+          <dxi-column dataField="condition" caption="Condition"></dxi-column>
+        </dx-data-grid>
+    
+  </div>
